@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>嚐室_關於我們</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" th:href="@{assets/favicon.ico}" />
+        <!-- Bootstrap icons
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />-->
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+ 		<!-- 導航欄 零件化了 有問題的話去index找-->
+            <nav th:replace="~{commons/common::navbar(active='about.html')}"></nav>            
+            <!-- Header-->
+            <header class="py-5">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xxl-6">
+                            <div class="text-center my-5">
+                                <h1 class="fw-bolder mb-3">喜歡甜點，喜歡做，更喜歡看身邊的人吃我做的甜點</h1>
+                            </div>
+                            <img class="img-fluid" th:src="@{/images/Canelé.png}" />
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- About 初衷-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" th:src="@{/images/中logo.png}" alt="about logo" /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">關於嚐室</h2>
+                            <p class="lead fw-normal text-muted mb-0">還記得小時候的夢想，是開一間甜點店。但總是這樣，越是長大好像離自己的夢想越遠。
+								那為什麼還是出現了「嚐室」呢<br>
+								是因為看見朋友吃到我做的甜點露出的模樣，以及我接到了第一顆蛋糕訂單。當時就想，何不就嘗試看看呢！</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Team members section-->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="text-center">
+                        <h2 class="fw-bolder">你知道嗎</h2>
+                        <p class="lead fw-normal text-muted mb-5">我們各自的身份..</p>
+                    </div>
+                    <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+                       
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" th:src="@{/images/shane.png}" alt="..." />
+                                <h5 class="fw-bolder">Yao</h5>
+                                <div class="fst-italic text-muted">嚐室甜點工作室工程師 &amp;<br>立志成為最香的宅宅</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-sm-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" th:src="@{/images/megan.png}" alt="..." />
+                                <h5 class="fw-bolder">蔣阿魚</h5>
+                                <div class="fst-italic text-muted">嚐室甜點工作室試吃官 &amp;<br>拖延症患者</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" th:src="@{/images/wanling.png}" alt="..." />
+                                <h5 class="fw-bolder">伶阿</h5>
+                                <div class="fst-italic text-muted">嚐室甜點工作室神秘客&amp;<br>刺青和香水教授</div>
+                            </div>
+                        </div>
+                         <div class="col mb-5">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" th:src="@{/images/ho.png}" alt="..." />
+                                <h5 class="fw-bolder">謙</h5>
+                                <div class="fst-italic text-muted">嚐室甜點工作室市集小童 &amp; 老闆養的汪汪</div>
+                            </div>
+                        </div>
+                         <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" th:src="@{/images/taro.png}" alt="..." />
+                                <h5 class="fw-bolder">芋闆娘</h5>
+                                <div class="fst-italic text-muted">嚐室甜點工作室主理人 &amp;<br>公仔收藏大戶 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2022</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

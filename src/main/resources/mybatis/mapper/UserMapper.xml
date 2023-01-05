@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 跟user的dao接口產生連結 -->
+<mapper namespace="com.Yao.ProjectTaste.Dao.UserMapper">
+	<!-- select查詢語句 -->
+	<select id="getuserList" resultType="com.Yao.ProjectTaste.pojo.User">
+		 select * from TasteDB.users;
+	</select>
+	
+	<select id="getUserbyId" parameterType="int" resultType="User">
+		select * from TasteDB.users where id =#{id};
+	
+	</select>
+	
+	<insert id="addUser" parameterType="User">
+		insert into TasteDB.users(id,name) values (#{id}, #{name});
+	
+	</insert>
+	
+	<update id="updateUser" parameterType="User">
+		update TasteDB.users set name= #{name} where id= #{id};
+	</update>
+	
+	<delete id="deleteUser" parameterType="int">
+		delete from TasteDB.users where id = #{id};
+	</delete>
+	
+	<insert id="addUserByMap" parameterType="map">
+		insert into TasteDB.users(id,name) values(#{userid},#{username});
+	</insert>
+	
+	<!-- ################################### -->
+	
+	<select id="getUserandCarts" resultMap="getuser3">
+		select u.id uid,u.name uname, c.orderID corderid, c.unit cunit
+		from users u, cart c
+		where u.cid = c.orderID
+	</select>
+	<resultMap type="User" id="getuser3">
+	<!-- command + option + 向下鍵 可以複製當前code到下一行-->
+		<result property="id" column="uid"/>
+		<result property="name" column="uname"/>
+		<collection property="cart" ofType="Cart">
+			<result property="orderID" column="corderid"/>
+			<result property="unit" column="cunit"/>
+		</collection>
+	</resultMap>
+	
+</mapper>

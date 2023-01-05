@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 跟user的dao接口產生連結 -->
+<mapper namespace="com.Yao.ProjectTaste.Dao.CartMapper">
+	
+	<!--
+	 1.查所有cart資料
+	 2.根據查出來的pid找出對應的product	
+	 -->
+						<!-- 自己取名然後寫對應resultMap -->		
+	<select id="getuser" resultMap="CartProducts">
+		select * from TasteDB.cart;
+	</select>
+	<resultMap type="Cart" id="CartProducts">
+		<result property="OrderID" column="orderid"/>
+		<result property="unit" column="unit"/>
+		<!-- 複雜的屬性單獨處理 association(對象)/collection(集合) -->
+		<association property="products" column="pid" javaType="Products" select="getProduct"></association>
+	</resultMap>
+	
+	<select id="getProduct" resultType="Products">
+		select * from products where id = #{id};
+	</select>
+	
+	<!-- ######################### -->
+	
+	<select id="getuser2" resultMap="CartProducts2">
+		<!-- 選取 c表裡的id和unit和 p表的p資料 -->
+		select c.id cid , c.unit cunit, p.productname pproductname, p.price pprice
+		<!-- 從這裡開始 選取兩張表 各給一個代稱 c 和 p-->
+		from cart c , products p
+		<!-- 顯示所有包含 c表的 pid ＝ p表的id 的資料-->
+		where c.pid = p.id;
+	
+	</select>
+				<!-- type本質上還是一個cart -->
+	<resultMap type="cart" id="CartProducts2">
+		<result property="id" column="cid"/>
+		<result property="unit" column="cunit"/>
+		<association property="products" javaType="Products" >
+			<result property="productname" column="pproductname"/>
+			<result property="price" column="pprice"/>
+		</association>
+	</resultMap>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>

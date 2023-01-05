@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content />
+        <meta name="author" content />
+        <title>嚐室＿會員登入</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" /> -->
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link th:href="@{css/styles.css}" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <!-- 導航欄 零件化了 有問題的話去index找-->
+            <nav th:replace="~{commons/common::navbar(active='User.html')}"></nav>
+                        <!-- Page content-->
+            <section class="py-5">
+                <div class="container px-5">
+                    <!-- 會員登入-->
+                    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+                        <div class="text-center mb-5">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+                            <h1 class="fw-bolder" th:text="#{login.tip}">會員</h1>
+                            <p class="lead fw-normal text-muted mb-0">來嚐室看看</p>
+                            <!-- 沒填資料 顯示資料錯誤的紅字  目前沒顯示-->
+                            <p style="color:red" th:text="${msg}" th:if="#{not #Strings.isEmpty(msg)}"></p>
+                        </div>
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-8 col-xl-6">
+                                <!-- * * * * * * * * * * * * * * *-->
+                                <!-- 提交完走/user/login請求 要去寫login controller-->
+                                <form id="contactForm" data-sb-form-api-token="API_TOKEN" th:action="@{/user/login}">
+                                    <!-- User Name input--> 
+                                    <!-- 國際化沒成功 已修正 js整個拿掉 未來再補回來 -->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="username" name="username" type="text" placeholder="請輸入帳號" data-sb-validations="required" />
+                                        <label for="name" th:text="#{login.username}">帳號</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">必填</div>
+                                    </div>
+                                    <!-- password input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="password"  name="password" type="password" placeholder="請輸入密碼" data-sb-validations="required" />
+                                        <label for="password" th:text="#{login.password}">密碼</label>
+                                        <div class="invalid-feedback" data-sb-feedback="password:required">必填</div>
+                                    </div>
+                                    <!-- 提交按鈕 -->
+                                    <div class="d-grid"><button class="btn btn-lg btn-primary btn-block" id="submitButton" type="submit" th:text="#{login.btn}">Submit</button></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2022</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

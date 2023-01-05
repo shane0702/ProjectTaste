@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="TastePlace,嚐室,可麗露,巴斯克,磅蛋糕,客製化甜點,布朗尼" />
+        <meta name="author" content="吳育庭,曾信堯" />
+        <title>嚐室 TastePlace</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" th:href="@{/assets/favicon.ico}" />
+        <!-- Bootstrap icons-->
+        <!--<link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css}" rel="stylesheet" />  -->
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+        									<!--傳入 active 當前頁面 的參數 -->
+        <nav th:replace="~{commons/common::navbar(active='index.html')}"></nav>
+  
+            <!-- Header-->
+            					<!-- 以後改成暖橘色 疑似需要sass文件 -->
+            <header class="p-3 mb-2 bg-warning py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-5 fw-bolder text-white mb-2">嚐嚐我的甜點</h1>
+                                <h1 class="display-5 fw-bolder text-white mb-2">           看看我的工作室</h1>
+                                <p class="lead fw-normal text-white-50 mb-4">Welcome to TastePlace</p>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">吃甜甜</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 首圖放在這裡 -->
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid" th:src="@{/images/Basque.png}"></div>
+                    </div>
+                </div>
+            </header>
+            <!-- Features section-->
+            <section class="py-5" id="features">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">訂購前先看看我
+                </h2></div>
+                        <div class="col-lg-8">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+							<!-- Button trigger modal -->
+							<div>
+								<button type="button" class="d-grid gap-3 d-sm-flex btn btn-active bg-Light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+							  		訂購方式
+								</button>
+							</div>
+							<p>
+							<div>
+								<button type="button" class="d-grid gap-3 d-sm-flex btn btn-active bg-Light" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+							  		保存方式及期限
+								</button>
+							</div>
+							<p>
+							<div>
+								<button type="button" class="d-grid gap-3 d-sm-flex btn btn-active bg-Light" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
+							  		宅配
+								</button>
+							</div>
+							<p>
+							<div>
+								<button type="button" class="d-grid gap-3 d-sm-flex btn btn-active bg-Light" data-bs-toggle="modal" data-bs-target="#staticBackdrop4">
+							  		修改訂單及退換貨政策
+								</button>
+							</div>
+														
+							
+							<!-- 訂購資訊欄位 -->
+							<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							  <div class="modal-dialog">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <h5 class="modal-title" id="staticBackdropLabel">訂購須知</h5>
+							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							      </div>
+							      <div class="modal-body">
+							        給一個google表單 未來新增完成購物車＋付款系統
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+							<!-- 保存期限欄位 -->
+							<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							  <div class="modal-dialog">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <h5 class="modal-title" id="staticBackdropLabel">保存期限及方式</h5>
+							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							      </div>
+							      <div class="modal-body">
+							        待補
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+							<!-- 宅配欄位 -->
+							<div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							  <div class="modal-dialog">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <h5 class="modal-title" id="staticBackdropLabel">宅配</h5>
+							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							      </div>
+							      <div class="modal-body">
+							        冷凍 冷藏 運費 
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+							<!-- 退換貨欄位 -->
+							<div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							  <div class="modal-dialog">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <h5 class="modal-title" id="staticBackdropLabel">退換貨</h5>
+							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							      </div>
+							      <div class="modal-body">
+							        退換貨政策 嚐室工作室保有最終解釋權利
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonial section-->
+            <div class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-10 col-xl-7">
+                            <div class="text-center">
+                                <div class="fs-4 mb-4 fst-italic">歡迎來嚐室 顛覆你的常識</div>
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <!--<img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />-->
+                                    <div class="fw-bold">
+                                        面交地址：台中市Ikea門口<span>/</span>南投市（7-11雅集門市、家樂福）  
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-start">
+                                	<div class="fw-bold">
+                                        Line：@855cuteg
+                                    </div>
+                                </div>
+								<div class="d-flex align-items-center justify-content-start">
+                                	<div class="fw-bold">
+										Instagram：tasteplace_0522
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2022</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
