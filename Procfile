@@ -1,0 +1,1 @@
+web: java -jar target/ProjectTaste-0.0.1-SNAPSHOT
