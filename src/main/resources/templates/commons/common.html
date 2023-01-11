@@ -2,11 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
  <!-- 導航欄位 抽取出來變成公共頁面 使用fragment-->
-            <nav class="navbar navbar-expand-lg navbar-dark p-3 mb-2 bg-warning" th:fragment="navbar">
+            <nav class="navbar navbar-expand-lg navbar-dark p-3 mb-2 " th:fragment="navbar" id="nav-bg">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><img class="rounded-circle img-fluid " style="width:100px; height:100px" th:src="@{/images/logo.png}" alt="logo"/><span></span>嚐室</a>
+                    <a class="navbar-brand" href="index.html"><img class="rounded-circle img-fluid " style="width:100px; height:100px" th:src="@{/images/logo.png}" alt="logo"/><span></span>
+                    <img class="img-fluid" alt="logo-words" id="logo-words" th:src="@{/images/純字.png}"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         	<!-- 要回頭改href檔案 -完成-->
                         	<!-- 登入後台要顯示誰誰誰登入 -->
@@ -15,19 +16,6 @@
                             <li class="nav-item"><a th:class="${active=='cart.html'?'nav-link active':'nav-link'}" href="cart.html">購物車</a></li>
                             <li class="nav-item"><a th:class="${active=='User.html'?'nav-link active':'nav-link'}" href="User.html">會員</a></li>
 
-                            <li class="nav-item dropdown">
-                               <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">客製化</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                    <li><a class="dropdown-item" href="portfolio-overview.html">客製化訂購須知</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">反響</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                    <li><a class="dropdown-item" href="blog-home.html">客人回饋</a></li>
-                                    <li><a class="dropdown-item" href="blog-home.html">退換貨</a></li>
-                                </ul>
-                            </li>
 
                         </ul>
                     </div>

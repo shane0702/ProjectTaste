@@ -20,32 +20,53 @@
   
             <!-- Header-->
             					<!-- 以後改成暖橘色 疑似需要sass文件 -->
-            <header class="p-3 mb-2 bg-warning py-5">
+            <header class="p-3 mb-2 py-5 bg-white" id="index-header">
                 <div class="container px-5">
                     <div class="row gx-5 align-items-center justify-content-center">
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
                             <div class="my-5 text-center text-xl-start">
-                                <h1 class="display-5 fw-bolder text-white mb-2">嚐嚐我的甜點</h1>
-                                <h1 class="display-5 fw-bolder text-white mb-2">           看看我的工作室</h1>
-                                <p class="lead fw-normal text-white-50 mb-4">Welcome to TastePlace</p>
-                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">吃甜甜</a>
-                                </div>
+                                <!-- <h1 class="display-5 fw-bolder text-white mb-2">嚐嚐我的甜點</h1>
+                                <h1 class="display-5 fw-bolder text-white mb-2">           看看我的工作室</h1> -->
+                               <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                              </div>
                             </div>
                         </div>
                         <!-- 首圖放在這裡 -->
-                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid" th:src="@{/images/Basque.png}"></div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"></div>
                     </div>
                 </div>
             </header>
             <!-- Features section-->
             <section class="py-5" id="features">
-                <div class="container px-5 my-5">
+                <div class="container px-5 my-5" id="carousel-container">
+                	                <!--輪播圖 ＃7619-->
+                <div class="slider_container" id="carousel">
+                	<div id="index-pic">
+                		<img alt="basque" th:src="@{/images/小站立可麗露.png}"  ></img>
+                		<span class="info">深藏不露</span>
+                	</div>
+                	<div id="index-pic">
+                		<img alt="basque" th:src="@{/images/小巧克力曲奇.png}"  ></img>
+                		<span class="info">長腿辣妹</span>
+                	</div>
+                	<div id="index-pic">
+                		<img alt="basque" th:src="@{/images/小莓果巴斯克.png}"  ></img>
+                		<span class="info">客製化巴斯克</span>
+                	</div>
+                	<div id="index-pic">
+                		<img alt="basque" th:src="@{/images/小磅蛋糕.png}"  > </img>
+                		<span class="info">巧克力磅蛋糕</span>
+                	</div>
+                	<div id="index-pic">
+                		<img alt="basque" th:src="@{/images/小小巴斯克.png}"  ></img>
+                		<span class="info">一口巴斯克</span>
+                	</div>
+                	
+                </div>
                     <div class="row gx-5">
-                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">訂購前先看看我
-                </h2></div>
+                        
                         <div class="col-lg-8">
-                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2" id="index-trigger">
 							<!-- Button trigger modal -->
 							<div>
 								<button type="button" class="d-grid gap-3 d-sm-flex btn btn-active bg-Light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -81,7 +102,18 @@
 							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							      </div>
 							      <div class="modal-body">
-							        給一個google表單 未來新增完成購物車＋付款系統
+							        <ol>
+							        <li>官網的購物車整修中，下單請先加入官方Line帳號 <mark><em>@855cuteg</em></mark> </li> 
+							        <li> 甜點都是接單才製作，每張訂單都是付款後5工作天才出貨，不含例假日、不接急單，可以接受再下單。</li>
+							        <li> 甜點皆純手工製作，餅乾皆手工擠花、切割，大小部分有落差皆屬正常，可以接受再下單。</li>
+							        <li> 若為客製化產品 ex:減糖、口味混搭…等，請先加line討論再下單。</li>
+							        <li>付款方式：銀行轉帳付款，下單後會提供「台新銀行」匯款帳戶。</li>
+							  
+							        
+							        </ol>
+							        
+							        
+							        
 							      </div>
 							      <div class="modal-footer">
 							        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
@@ -98,7 +130,16 @@
 							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							      </div>
 							      <div class="modal-body">
-							        待補
+							        <ul>
+								        <li>巴斯克：冷藏7天、冷凍1個 </li> 
+								        <li>可麗露：常溫1天內、冷藏7天、冷凍1個月</li>
+								        <li>餅乾：常溫15天（若因開開關關而軟掉 可用150度回烤五分鐘即可）</li>
+								        <li>磅蛋糕：</li>
+								        <li>餅乾：常溫15天（若因開開關關而軟掉 可用150度回烤五分鐘即可）</li>
+								  
+							        
+							        </ul>
+							        
 							      </div>
 							      <div class="modal-footer">
 							        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
@@ -115,8 +156,23 @@
 							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							      </div>
 							      <div class="modal-body">
-							        冷凍 冷藏 運費 
-							      </div>
+							      	<table style="border:3px #cccccc solid;" cellpadding="2" border='1' id="index-table">
+							      		<tr><td>常溫宅配</td><td>運費：180元，恕只接受匯款及LinePay</td></tr>
+										<tr><td>常溫超取</td><td>運費：60元，恕只接受匯款及LinePay</td></tr>							      	
+										<tr><td>冷凍宅配</td><td>運費：180-300元不等，取決於訂購數量，體積大小，恕只接受匯款及LinePay</td></tr>							      	
+										<tr><td>冷凍超取</td><td>運費：120元。僅提供7-11，需確認指定門市是否收取冷凍超取，並提供超商名稱與店號（包含指定用包材，價格更動依7-11官網為主，，恕只接受匯款及LinePay</td></tr>							      	
+									</table>
+									<p>
+							       <em>須知：</em>
+							       <ol>
+							       	<li>宅配會有一定風險，可以接受再下單</li>
+							       	<li>物流配送時間約為1-2個工作天，不含例假日，實際情況以物流為主</li>
+							       	<li>目前無離島寄送服務</li>
+							       	<li>如無特殊情況恕不接受棄單，無法退款。</li>
+							       </ol>
+							      
+							       										
+						      </div>
 							      <div class="modal-footer">
 							        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
 							      </div>
@@ -132,7 +188,8 @@
 							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							      </div>
 							      <div class="modal-body">
-							        退換貨政策 嚐室工作室保有最終解釋權利
+							        <strong>退換貨政策：</strong>
+							        嚐室工作室保有最終解釋權利
 							      </div>
 							      <div class="modal-footer">
 							        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
@@ -147,40 +204,38 @@
                 </div>
             </section>
             <!-- Testimonial section-->
-            <div class="py-5 bg-light">
+            <div class="py-5 bg-white">
                 <div class="container px-5 my-5">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-10 col-xl-7">
-                            <div class="text-center">
-                                <div class="fs-4 mb-4 fst-italic">歡迎來嚐室 顛覆你的常識</div>
-                                <div class="d-flex align-items-center justify-content-start">
-                                    <!--<img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />-->
-                                    <div class="fw-bold">
-                                        面交地址：台中市Ikea門口<span>/</span>南投市（7-11雅集門市、家樂福）  
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-start">
-                                	<div class="fw-bold">
-                                        Line：@855cuteg
-                                    </div>
-                                </div>
-								<div class="d-flex align-items-center justify-content-start">
-                                	<div class="fw-bold">
-										Instagram：tasteplace_0522
-                                    </div>
-                                </div>
-                                
-                                
-                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
            
         </main>
-        <!-- Footer-->
-        <footer class="bg-dark py-4 mt-auto">
-            <div class="container px-5">
+	<!-- Footer-->
+	<footer class="bg-dark py-4 mt-auto" id="index-footer">
+		<div
+			class="text-center row align-items-center justify-content-between flex-column flex-sm-row">
+			<div class="d-flex align-items-center justify-content-start col-auto small m-0 text-white">
+				<div class="fw-bold" id="footer-one">
+					面交地址：台中市Ikea門口<span>/</span>南投市（7-11雅集門市、家樂福）
+				</div>
+			</div>
+			<div
+				class="d-flex align-items-center justify-content-start col-auto small m-0 text-white">
+				<div class="fw-bold" id="footer-two">Line：@855cuteg</div>
+			</div>
+			<div
+				class="d-flex align-items-center justify-content-start col-auto small m-0 text-white">
+				<div class="fw-bold" id="footer-three">Instagram：tasteplace_0522</div>
+			</div>
+		</div>
+
+
+		<!-- <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2022</div></div>
                     <div class="col-auto">
@@ -191,9 +246,9 @@
                         <a class="link-light small" href="#!">Contact</a>
                     </div>
                 </div>
-            </div>
-        </footer>
-        <!-- Bootstrap core JS-->
+            </div> -->
+	</footer>
+	<!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>

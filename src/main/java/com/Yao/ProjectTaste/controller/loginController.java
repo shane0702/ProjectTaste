@@ -29,7 +29,7 @@ public class loginController {
 			return "redirect:/main.html"; //登入成功 重定向到購物車
 		}else {
 			model.addAttribute("msg","error user or password");
-			return "redirect:/index.html";//失敗 回到頁面
+			return "redirect:/User.html";//失敗 回到頁面
 		}
 	}
 }
